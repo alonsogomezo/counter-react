@@ -16,6 +16,8 @@ function Contador(props) {
 					height="150"
 				/>
 			</div>
+			<div className="seis">{props.digitoSeis % 10}</div>
+			<div className="cinco">{props.digitoCinco % 10}</div>
 			<div className="cuatro">{props.digitoCuatro % 10}</div>
 			<div className="tres">{props.digitoTres % 10}</div>
 			<div className="dos">{props.digitoDos % 10}</div>
@@ -25,6 +27,8 @@ function Contador(props) {
 }
 
 Contador.propTypes = {
+	digitoSeis: propTypes.number,
+	digitoCinco: propTypes.number,
 	digitoCuatro: propTypes.number,
 	digitoTres: propTypes.number,
 	digitoDos: propTypes.number,
@@ -33,6 +37,8 @@ Contador.propTypes = {
 
 let cont = 0;
 setInterval(function () {
+	const seis = Math.floor(cont / 100000);
+	const cinco = Math.floor(cont / 10000);
 	const cuatro = Math.floor(cont / 1000);
 	const tres = Math.floor(cont / 100);
 	const dos = Math.floor(cont / 10);
@@ -44,7 +50,9 @@ setInterval(function () {
 			digitoDos={dos}
 			digitoTres={tres}
 			digitoCuatro={cuatro}
+			digitoCinco={cinco}
+			digitoSeis={seis}
 		/>,
 		document.querySelector("#app")
 	);
-}, 1000);
+}, 0.1);
