@@ -55,4 +55,4 @@ setInterval(function () {
 		/>,
 		document.querySelector("#app")
 	);
-}, 0.1);
+}, 1000);
